@@ -1,6 +1,7 @@
+from asyncio import events
 from django.shortcuts import render
 from projectapp.models import Enquiry,Information,Project
-from .models import Slider
+from .models import Blog, Events, Slider
 
 def home(request):
     sliders = Slider.objects.all()[:3]
@@ -48,10 +49,13 @@ def contact(request):
 
 
 def blog(request):
-    return render(request,'homeapp/blog.html')
+    blogs= Blog.objects.all()
+    return render(request,'homeapp/blog.html',{'blogs':blogs})
 
 def blog_details(request,pk):
-    return render(request,'homeapp/blog_details.html')
+    object= Blog.objects.get(pk=pk)
+    return render(request,'homeapp/blog_details.html',{'object':object})
 
 def event(request):
-    return render(request,'homeapp/events.html')
+    events = Events.objects.all()
+    return render(request,'homeapp/events.html',{'events':events})

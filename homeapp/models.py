@@ -1,5 +1,4 @@
-from email.mime import image
-from unicodedata import name
+
 from django.db import models
 from django.utils.html import mark_safe
 from django.conf import settings

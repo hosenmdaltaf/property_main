@@ -5,46 +5,50 @@
 
 
 <!----------------- news & evens ----------------->
+
 <section class="news-events">
     <div class="container">
-        <div class="row"> 
+        <div class="row">
 
-
-          {% for event in events %}
+      {% for event in events %}
             <div class="col-md-12">
-                <h2 class="heading">News <span><img class="mobile_only" src="themes/cms/assets/images/static/and.svg" alt=""> </span><img class="desktop_only" src="themes/cms/assets/images/static/and_red.svg" alt=""></span> Events</h2>
+                <h2 class="heading">News <span>
+                    <img class="mobile_only" src="themes/cms/assets/images/static/and.svg" alt=""> </span>
+                <img class="desktop_only" src="themes/cms/assets/images/static/and_red.svg" alt=""></span>
+                 Events</h2>
                 
+          
                 <div class="news-events-wrap">
-
                         <div class="single-news">
                             <div class="title-bar">
-                            <p>December 11, 2018</p>
+                            <p>{{event.date}}</p>								
                         </div>
                             <div class="single-news-des news-desc">
-                                <h4>Ventura signs flagship Highrise commercial project at Tejgaon link road</h4>
-                                    <p>Ventura signed a development agreement for high Highrise commercial project at Tejgaon link road. Tejgaon Link road is presently the hot spot new commercial developments. Ventura is planning to develop a world class state-of-art green commercial building which will house the business entities who are looking for the best in office spaces</p>
-             <div class='single-news-img'>	
-                   <div class="col-xs-6 col-sm-6 col-md-3" >
-                       <div class="News-Img-Wrap" style="background:url('admin/uploads/page/news-events/1549103894wi8tl.jpg')">
-
-                       </div>
-                    </div>
-                                        <!-- <div class="news-expand-all ">
+                 <h4>{{event.name}}</h4>
+                                    <p>{{event.content|safe}}</p>
+                                    <div class='single-news-img'>	
+                                    <div class="col-xs-6 col-sm-6 col-md-3" >
+                                        <div class="News-Img-Wrap" style="background:url({{event.image.url}})"></div>
+                                    </div>
+                                     {% comment %} <!-- <div class="news-expand-all ">
                                             <p>expand all</p>
                                         </div> -->
+                                     {% endcomment %}
 
-                                </div>									
+                                    </div>									
+                                </div>
                             </div>
-                        </div>
-                    </div>
-               </div>
-               {% endfor %}
+                      </div>
+                </div>
+                {% endfor %}
 
-
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
 <!----------------- news & evens end ----------------->
+
 
 
 {% endblock %}
