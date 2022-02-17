@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+   
+<div class="banner-section mobile_only" style="background:url('static/admin/uploads/product/ventura-north-star/1541658055GLCvD.jpg')"></div>
+
+<!-------------- content content -------------->
+    <section class="contact-content mt40">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                <div class="banner-section desktop_only" style="background:url('../../static/admin/uploads/gallery/ventura-adora/1545887545jxhD7.jpg')"></div>
+                </div>
+
+                <div class="col-md-6">
+                <h2 class="heading">Contact us</h2>
+            <div class="contact-des">
+                <p>Please contact us regarding any of your inquiries by filling up the form below. Allow 24 hours for response. If you would like to speak to an executive, please call any our telephone hotline number and we would be glad to assist you.</p>
+            </div>
+            
+            <div class="single-address">
+                <h4>Corporate Office</h4>
+                <p>Ventura Avenue, CWN(C) - 8/B Gulshan Avenue <br> (Bir Uttam Mir Showkat Sharak), Gulshan, Dhaka 1212</p>
+            </div>
+            <div class="phone-mail">
+                <div class="col-md-6 col-xs-6 p0">
+                    <p>Phone</p>
+                    <p>+880 9611446622,<br> +88-01713434013</p>
+                </div>
+
+                <div class="col-md-6 col-xs-6 p0">
+                    <p>Email</p>
+                    <p>info@venturabd.com</p>
+                </div>
+            </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <div class="GoUp go-down-to">
+            <a href="#plocation"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>	 
+        </div> -->
+    </section>
+    
+<!-------------- content content end -------------->
+
+
+
+
+<!------------------  location map	 ------------------>
+<section class="location-map" id="plocation">
+
+    <div class="container">
+        <div class="row">
+
+    <div class="col-md-6 map-margin">
+        <p class="MapTitle">Location</p>
+        <div id="project-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63828066.244582355!2d49.02209131578923!3d12.465963859043343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1svns%20tower!5e0!3m2!1sen!2sbd!4v1643700637319!5m2!1sen!2sbd" width="555" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+
+
+<div class="col-md-6">
+
+       <!-------------- Enquiry form -------------->
+       <section class="enquery" id="scroll-enquery">
+        <div class="container">
+            <div class="row">
+            
+                <div class="col-md-6 col-sm-12">
+                    <h2 class="heading" style="margin-top:1px;">Enquiry</h2>
+
+<form id="contact-form" class="dynamic_form contact-form" action="#" method="POST" data-pjax="false">
+{% csrf_token %}
+<!-- <input type="hidden" name="_csrf-frontend" value="ZfGhlxXCxycwrZ3zhgF3yz5aNznnhdBhCqNdfzDimVAHmpbOUaaNCln99b7jeDWqaDFlQ7_khCtN5hQ2YKutBg==">	
+<input type="hidden" id="contact-form" class="form-control" name="form_id" value="contact-form"> -->
+
+<div class="form-message-container success_wrapper hide success_wrapper_contact-form">
+<div class="form-message-body">
+<span class="success_container_contact-form"></span>
+</div>
+</div>
+
+<div class="form-message-container error_wrapper hide error_wrapper_contact-form">
+<div class="form-message-body">
+<span class="error_container_contact-form"></span>
+</div>
+</div>
+
+<input type="text"  name="Dynamicform[spam_protector]"  style="display:none;"><div class="form-group">
+
+<label> Name</label>
+<input type="text" class="form-control" name="name" id="name" placeholder="name"  required>
+    </div><div class="form-group ">
+<label> address</label>
+<input type="text" class="form-control" name="address" id="address"
+                                 required>
+    </div><div class="form-group">
+<label> phone</label>
+<input type="text" class="form-control" name="phone" id="phone"
+                                 required>
+    </div><div class="form-group">
+<label> email</label>
+  <input type="email" class="form-control" name="email" id="email">
+</div><div class="form-group ">
+<label> message</label>
+<textarea id="message" class="form-control" name="message" ></textarea>
+</div>
+<input type="hidden"  name="Dynamicform[project]"  id="project_input" >
+        <div class="navNdown">
+<button type="submit" class="cbtn btn btn-default dynamic_submit_btn">submit <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+
+</div>
+
+
+                    
+
+    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!--------------Enquiry form  end-------------->
+</div>
+
+
+
+
+
+</div>
+</div>
+ 
+</section>
+
+
+{% endblock %}

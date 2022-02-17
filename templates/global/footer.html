@@ -1,0 +1,98 @@
+{% load static %}
+
+{% block content %}
+
+
+    <!------------------ footer ------------------>
+    <section class="footer mt40 p40" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 address-left">
+                    <div class="address-wrap">
+                        <h4>Address</h4>
+                        <p>Ventura Avenue, CWN(C) - 8/B Gulshan Avenue <br> (Bir Uttam Mir Showkat Sharak), Gulshan, Dhaka 1212</p>
+                        
+                    </div>
+
+                    <div class="address-wrap">
+                        <h4>Email</h4>
+                        <!-- <p>info@venturabd.com</p> -->
+                        <a href="mailto:info@venturabd.com">info@venturabd.com</a>
+                    </div>
+
+                    <div class="address-wrap">
+                        <h4>Phone</h4>
+                        <!-- <p>+880 9611446622,<br> +88-01713434013</p> -->
+                        <a href="tel:+880 9611446622,<br> +88-01713434013" title="phone">+880 9611446622,<br> +88-01713434013</a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6">
+                    <div class="social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/venturapropertiesltd/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/ventura_properties/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCWTmNHkR1XPiPWr9vSEo2Ag" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.pinterest.com/Ventura_Properties/" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="subscribe">
+                        <p>Keep in touch with news of new project launches, events and updates</p>
+                    
+                        <div class="subscription-form-wrapper">
+                        
+                            <form id="subscribe" class="dynamic_form " action="https://www.venturabd.com/site/dynamic_form" method="post" data-pjax="false">
+<input type="hidden" name="_csrf-frontend" value="nEYMpLs0ZgRAZXykPCPcl5yhxY7rT_sW1nkT4CM4rk3-LTv9_1AsKSk1FOlZWp72ysqX9LMur1yRPFqpc3GaGw==">				<input type="hidden" id="subscribe" class="form-control" name="form_id" value="subscribe">
+
+        
+
+<div class="form-message-container success_wrapper hide success_wrapper_subscribe">
+<div class="form-message-body">
+<span class="success_container_subscribe"></span>
+</div>
+</div>
+<div class="form-message-container error_wrapper hide error_wrapper_subscribe">
+<div class="form-message-body">
+<span class="error_container_subscribe"></span>
+</div>
+</div>
+        <div class="form-group input-here">
+                                <input type="text" class="form-control" name="Dynamicform[email]" placeholder="type your email here" >
+                            </div><input type="text"  name="Dynamicform[spam_protector]"  style="display:none;">
+                            <div class="form-group ">
+                    <button type="submit" class="btn btn-default dynamic_submit_btn_2">subscribe</button>		            </div>
+        
+
+                    
+
+    </form>                   
+                        </div>
+
+                        <div class="go-down back-to-top">
+                            <a href="#first-scroll"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!------------------ footer end ------------------>
+
+
+<!------------- copyright ------------->
+<section class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-8">
+                <p>© 2008-2022 by Ventura Properties Limited</p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4 text-right">
+                                        <p >Developed by <a class="Dev" href="http://dcastalia.com/" target="_blank"> <span><img src="themes/cms/assets/images/static/dcastalia.svg" alt=""></span> </a></p>
+                                </div>
+        </div>
+    </div>
+</section>
+<!------------- copyright end ------------->
+
+{% endblock %}

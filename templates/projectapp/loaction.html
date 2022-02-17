@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!------------- project menu ------------->
+    <div class="project-menu">
+        <div class="main-menu project-menu-toggle">
+            <ul>
+                <li><a class="active" href="all.html">ALL LOCATIONS</a></li>
+                {% for a in all %}
+                <li><a class="" href="{% url 'projectapp:loaction_detailpage' a.pk %}">{{a}}</a></li>
+                {% endfor %}
+                <li class="close-menu"><a href="#">close <img src="../../themes/cms/assets/images/static/cancel.svg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <!------------- project menu end ------------->
+
+    <!------------------- project listing ------------------->
+    <section class="project-listing location-filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="project-shorting-menu location-shorting">
+                    <ul>                                <li><a href="../../projects.html#scroll-ongoing">Ongoing</a></li>
+                                                    <li><a href="../../projects.html#scroll-commercial">Commercial</a></li>
+                                                    <li><a href="../../projects.html#scroll-completed">Completed</a></li>
+                    <li><a class='project-menu-action active' href='#'> locations</a></li></ul>                        
+                    </div>
+            
+                    <div class="project-here">
+
+                             {% for loc in loaction %}
+                             <div class="col-md-3 col-sm-6 col-xs-6">
+                                <a href="../../detail/ventura-sky-valley.html">
+                                    <div class="single-project-thumb" style="background:url('../../admin/uploads/product/ventura-sky-valley/1541656231ZNeAV.jpg')"></div>
+                                    <div class="single-project-des">
+                                        <h4>{{loc.short_loaction}}</h4>
+                                        <p>{{loc.name}}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+
+
+                          </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!------------------- project listing end------------------->
+
+
+{% endblock %}

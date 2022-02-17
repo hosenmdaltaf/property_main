@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<style>
+
+    .carousel-item {
+        height: 450px;
+        width: 100vh;
+        margin-top: 10px;
+      }
+      
+      .carousel-item img {
+          /* position: absolute; 
+          top: 0;
+          left: 0;
+          min-height: 450px;
+          object-fit: contain; */
+    
+    
+          object-fit: cover;
+        object-position: center center;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        height:100%;
+        transition: transform .5s;
+      }
+
+ .carousel-inner > .item > a > img, .carousel-inner > .item > img {
+line-height: 1;
+width: 100%;
+height: 450px;
+margin-top: 72px;
+}
+    
+    </style>
+
+
+
+<div id="carousel-id" class="carousel slide" data-ride="carousel">
+
+<div class="carousel-inner">
+  
+    {% for slider in sliders %}
+    <div class="item">
+        <img data-src="{{slider.image.url}}" alt="Second slide" src="{{slider.image.url}}">
+   
+    </div>
+    {% endfor %}
+
+    <div class="item active">
+        <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="static/img/themnail.png">
+        <!-- <div class="container">
+            <div class="carousel-caption">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            
+            </div>
+        </div> -->
+    </div>
+    
+</div>
+<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!------------------- after banner text section ------------------->
+<section class="after-banner-text mt40">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6 desktop_only">
+                <div class="banner-section" style="background:url('static/admin/uploads/product/ventura-north-star/1541658055GLCvD.jpg')"><a href="detail/ventura-north-star.html"></a></div>
+            </div>
+                
+            <div class="col-md-6 col-sm-6 home-project-text">
+                <h2 class="heading">The place you call home</h2>
+                <p><p>Home is a little corner of God&rsquo;s green earth to call your own. Home is where you are surrounded by the simple possessions that make you smile. Home is time spent slowing down. A house is just four walls and a roof, but a home is made up of everything else inside.</p>
+</p>
+                
+                <div class="navNdown">
+                        <a class="cbtn" href="{% url 'projectapp:projectpage' %}">see our projects <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            
+                </div>
+            </div>
+
+            <div class="col-md-6 desktop_only">
+                <section class="landowner mt40">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="heading-second">Landowners</h2>
+                                    
+                                    <p>As a property owner, your ultimate aim would be to ensure maximum living comfort while retaining the highest possible value and return of the property over its lifetime. Please contact us with your property details to have an insight of the potential and possible development options for your valued piece of land. For one to one conversation you can call at 
+                                   <br>+ 88 0171 3434 011.</p>
+
+                                    <div class="navNdown">
+                                        <a class="cbtn" href="{% url 'homeapp:landownerpage' %}">landowner enquiries <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+
+                                        <!-- <div class="go-down back-to-top">
+                                            <a href="#first-scroll"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>	
+                                        </div> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+
+            <div class="home-project-gallery col-md-6 col-sm-6 Light LightProb" id='first-scroll' >
+                <ul>
+                  
+                    {% for co in   ongoing %}
+                    <li style="background:url({{co.thumnail_image.url}})">
+                        <a href="{{co.thumnail_image.url}}"  data-exthumbimage="{{co.thumnail_image.url}}"   data-sub-html='<a href="{% url 'projectapp:project_detailpage' co.pk %}" > {{on.name}} </a> '></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!------------------- after banner text section end ------------------->
+
+
+<!--------------------- Complete project gallery section  --------------------->
+<section class="after-banner-text mt40 complete-project-gallery">
+    <div class="container">
+        <div class="row">
+
+       
+
+            <div class="home-project-gallery col-md-6 col-sm-6 Light-nd LightProb" >
+                <ul>
+                    {% for co in complated %}
+                  <li style="background:url({{co.thumnail_image.url}})">
+                    <a href=" {{co.thumnail_image.url}}"  data-exthumbimage="{{co.thumnail_image.url}}" 
+                    data-sub-html='<a href="{% url 'projectapp:project_detailpage' co.pk %}" > {{co.name}} </a> '></a>
+                  </li>
+                  {% endfor %}
+
+                
+                 </ul>
+            </div>
+
+                 <div class="col-md-6 col-sm-6 desktop_only">
+                    <div class="completed-new-bg" style="background:url('static/admin/uploads/product/ventura-astrea/1579169337ltlR9.jpg')">
+                    <a class="cbtn" href="projects.html#scroll-completed">completed projects <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <!-- <div class="col-md-6 col-sm-12 col-xs-12 mobile_only">
+
+                <div class="navNdown">
+                    <a class="cbtn" href="projects.html#scroll-completed">completed projects <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+</section>
+<!--------------------- Complete project gallery section  --------------------->
+
+
+
+{% endblock %}

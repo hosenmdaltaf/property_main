@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    
+<div class="banner-section mobile_only" style="background:url('admin/uploads/page/landowners/1545897885Lruxw.jpg')"></div>
+
+<!------------------- after banner text section ------------------->
+<section class="after-banner-text landowner-after-banner-text mt40 " id="scoll-gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="banner-section desktop_only" style="background:url('admin/uploads/page/landowners/1545897885Lruxw.jpg')"></div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="heading">Landowners</h2>
+                <p>We work with our landowners as development partners to achieve the highest possible value &amp; return of the property over its lifetime. We ensure construction integrity, effective planning, architectural aesthetics, features and facilities that will be appreciated the most</p>
+
+<p>If you are interested to develop your property with us, please fill up the following form to help us to make a preliminary assessment of the development potentials &amp; options for your valued piece of land. For one to one conversation you can call at:
+<strong>+ 88 0171 3434 011</strong></p>
+                    <!-- <div class="goto-news">
+                        <a href="#scroll-land"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>	 
+                    </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------- after banner text section end ------------------->
+
+
+<!---------- landowner form ------------->
+<section class="land-form" id="scroll-land">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Property Information Form</h3>
+
+
+  <form id="landowner-form" class="dynamic_form " action="#" method="POST" data-pjax="false">
+<!-- <input type="hidden" name="_csrf-frontend" value="vrcgVdMHUq7JXkZOvrA7Cx6v8dsOqyZvJOKmvvZctuzc3BcMl2MYg6AOLgPbyXlqSMSjoVbKciVjp-_3phWCug==">				<input type="hidden" id="landowner-form" class="form-control" name="form_id" value="landowner-form">
+ -->
+ {% csrf_token %}
+
+<div class="form-message-container success_wrapper hide success_wrapper_landowner-form">
+<div class="form-message-body">
+<span class="success_container_landowner-form"></span>
+</div>
+</div>
+<div class="form-message-container error_wrapper hide error_wrapper_landowner-form">
+<div class="form-message-body">
+<span class="error_container_landowner-form"></span>
+</div>
+</div>
+        <input type="text"  name="spam_protector"  style="display:none;">
+<div  class="left-dev">
+
+<div class="form-group">
+<label>name of the landowner/s</label>
+  <input type="text" id="name"  class="form-control" name="name">
+ </div>
+ 
+ <div class="form-group">
+<label>name of the contact person  <span>(if different from landowner)</span></label>
+    <input type="text" id="contact_person"  class="form-control" name="contact_person" placeholder="">
+ </div> 
+
+     <div class="form-group col-sm-6 col-xs-6 pl0">
+        <label>phone</label>
+        <input  type="text"    class="form-control" name="phone" id="phone" >
+     </div>
+
+        <div class="form-group col-sm-6 col-xs-6 pr0">
+           <label>email</label>
+         <input type="text" class="form-control"  name="email" id="email">
+         </div>
+
+     <div class="form-group  col-sm-6 col-xs-6 pl0">
+      <label>property location</label>
+      <div class="custom-select">
+                  <select  id="location"  class="form-control" name="location">
+                            <option value="select">Please Select</option>
+                            <option value="Baridhara">Baridhara</option>
+                            <option value="North Gulshan">North Gulshan</option>
+                            <option value="Gulshan">Gulshan</option>
+                            <option value="Dhanmondi">Dhanmondi</option>
+                            <option value="Banani">Banani</option>
+                            <option value="Uttara">Uttara</option>
+                            <option value="Others">Others</option>
+                  </select>
+      </div>
+</div>
+
+<div class="form-group   col-sm-6 col-xs-6  pr0">
+         <label>type of Development</label>
+         <div class="custom-select">
+                    <select  id="developer"  class="form-control" name="developer">
+                                     <option value="select">Please Select</option>
+                                     <option value="Residential">Residential</option>
+                                     <option value="Commercial">Commercial</option>
+                                     <option value="mixed use">Mixed Use</option>
+                    </select>
+        </div>
+</div>
+
+<div class="form-group">
+<label>land address</label>
+ <input type="text" class="form-control" placeholder="" name="address">
+   </div>
+
+   <div class="form-group col-sm-6 col-xs-6 pr0">
+    <input type="text" class="form-control" name="width" placeholder="width in feet" >
+ </div>
+ <!-- <div class="form-group col-sm-1 col-xs-1 p0 text-center mt8">
+ X
+</div> -->
+<div class="form-group col-sm-6 col-xs-6 pr0">
+<input type="text" class="form-control" name="depth" placeholder="Depth in feet">
+</div>
+
+
+</div>
+
+<!-- <div class="right-dev">
+<div class="innergroup"> -->
+<!-- <p>land area / size</p> -->
+<!-- <div class="form-group col-sm-5 col-xs-5 p0">
+    <input type="text" name="size"  class="form-control">
+</div> -->
+
+<!-- <div class="form-group col-sm-7 col-xs-7 p0">
+<div class="custom-select">
+    <select   name="size_unit">
+        <option value="Katha">Katha</option>
+        <option value="Sq. Feet">Sq. Feet</option>
+        <option value="Sq. Meter">Sq. Meter</option>
+    </select>
+</div>
+</div> -->
+
+<!-- </div> -->
+
+<!-- <div class="innergroup-nd"> -->
+ <!-- <p>land dimension</p> -->
+
+
+<!-- <div class="form-group col-sm-6 col-xs-6 pr0">
+    <label>email</label>
+  <input type="text" class="form-control"  name="email" id="email">
+  </div> -->
+
+
+<!-- <div class="form-group col-sm-3  col-xs-3 p0">
+<div class="custom-select"  >
+    <select name="dimension_unit">
+        <option value="Feet">Feet</option>
+        <option value="Meter">Meter</option>
+    </select>
+</div>
+</div> -->
+<!-- 
+</div> -->
+
+<div class="innergroup-rd">
+
+ <p>facing road (select both if corner plot)</p>
+
+<div class="form-group col-sm-6 col-xs-6 pr0 mt8">
+       <label class="check-container checkbox-inline">North
+         <input type="checkbox" name="facing" value="North">
+             <span class="checkmark"></span>
+   </label>
+   <label class="check-container checkbox-inline">South
+          <input type="checkbox" name="facing" value="South">
+     <span class="checkmark"></span>
+   </label>
+   <label class="check-container checkbox-inline">East
+     <input type="checkbox" name="facing" value="East">
+         <span class="checkmark"></span>
+  </label>
+  <label class="check-container checkbox-inline">West
+    <input type="checkbox" name="facing" value="West">
+    <span class="checkmark"></span>
+ </label>
+</div>
+
+
+<!-- <div class="col-xs-5 col-sm-5 pr0 pl20">
+   <div class="form-group col-sm-6 col-xs-6 p0">
+    <input type="text"  class="form-control" placeholder="width" name="corner_width">
+</div> -->
+
+<!-- <div class="form-group col-sm-6 col-xs-6 p0 ">
+<div class="custom-select">
+    <select name="width_unit" >
+        <option value="Feet">Feet</option>
+        <option value="Meter">Meter</option>
+    </select>
+</div>
+</div> -->
+
+
+</div>
+
+<div class="form-group">
+    <label>any special feature (lake/park facing etc.)</label>
+    <input type="text" class="form-control"  name="feature">
+</div>
+<div class="form-group">
+     <label>landowner's requirment / note</label>
+     <input type="text" class="form-control" name="note">
+</div>
+
+
+</div>
+
+
+ 
+<div class="navNdown">
+<button type="submit" class="cbtn btn btn-default dynamic_submit_btn">submit <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+</div>
+
+</div>                
+
+    </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!---------- landowner form end ---------->
+
+
+
+
+{% endblock %}

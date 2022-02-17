@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+  <!------------- project menu ------------->
+  <div class="project-menu">
+    <div class="main-menu project-menu-toggle">
+        <ul>
+            <li><a class="active" href="{% url 'projectapp:projectpage' %}">ALL LOCATIONS</a></li>
+
+         
+            <!-- <li><a class="" href="gulshan.html">GULSHAN</a></li>
+            <li><a class="" href="banani.html">BANANI </a></li>
+            <li><a class="" href="dhanmondi.html">DHANMONDI  </a></li>
+            <li><a class="" href="uttara.html">UTTARA</a></li>
+            <li><a class="" href="others.html">OTHERS</a></li> -->
+            <li class="close-menu"><a href="#">close <img src="../../themes/cms/assets/images/static/cancel.svg" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+<!------------- project menu end ------------->
+
+   <!------------------- project listing ------------------->
+
+   <section class="project-listing">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p0">
+                <div class="project-shorting-menu">
+            <ul>  
+                <li><a class="active" href="#scroll-ongoing">Ongoing</a></li>
+                <li><a class="" href="#scroll-commercial">Commercial</a></li>
+                <li><a class="" href="#scroll-completed">Completed</a></li>
+                <li><a class='project-menu-action'  href='#'> locations</a></li>
+            
+            </ul>                    
+                </div>
+        
+                <div class="project-here">
+                    <div class="ProjectWrap" id="scroll-ongoing">
+                        <h2 class="project-heading">Ongoing Residential </h2>
+
+                        {% for on in ongoing %}
+                                <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <a href="{% url 'projectapp:project_detailpage' on.pk%}">
+                                        <div class="single-project-thumb-wrap" >
+                                        <div class="single-project-thumb" style="background:url({{on.thumnail_image.url}})"></div>
+                                    </div>
+                                        <div class="single-project-des">
+                                            <h4>{{on.short_loaction}}</h4>
+                                            <p>{{on.name}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                         {% endfor %}
+                 
+
+                          </div>
+
+                    <!--  -->
+                    
+                    <div class="ProjectWrap CommerCial" id="scroll-commercial">
+                        <h2 class="project-heading">Ongoing Commercial </h2>
+
+                        {% for cm in commercial %}
+                                <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <a href="{% url 'projectapp:project_detailpage' cm.pk %}">
+                                        <div class="single-project-thumb-wrap">
+                                        <div class="single-project-thumb" style="background:url({{cm.thumnail_image.url}})"></div>
+                                        </div>
+                                        
+                                        <div class="single-project-des">
+                                            <h4>{{cm.short_loaction}}</h4>
+                                            <p>{{cm.name}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                        {% endfor %}
+                             
+                    </div>
+
+                    <!--  -->
+                    
+                    
+                    <div class="ProjectWrap" id="scroll-completed">
+                        <h2 class="project-heading">Completed Projects </h2>
+
+                        {% for co in complated %}
+
+                                   <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <a href="{% url 'projectapp:project_detailpage' co.pk %}">
+                                        <div class="single-project-thumb-wrap">
+                                        <div class="single-project-thumb" style="background:url({{co.thumnail_image.url}})"></div>
+                                        </div>    
+                                    
+                                        <div class="single-project-des">
+                                            <h4>{{co.short_loaction}}</h4>
+                                             <p>{{co.name}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                        {% endfor %}
+                        
+                          
+                           
+                    </div>
+
+                    <!--  -->
+
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>
+
+<script>
+    setTimeout(function(){
+        history.pushState('', document.title, location.href.replace( /#.*/, ''));
+    },1500)
+</script>
+
+<!------------------- project listing end------------------->
+
+
+{% endblock %}

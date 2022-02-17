@@ -1,0 +1,35 @@
+{% load static %}
+
+{% block content %}
+
+<!------------------- fixed sections ------------------->
+        <!-- main menu -->
+        <div class="main-menu main-menu-toggle">
+            <ul>
+            <li><a href="{% url 'homeapp:homepage' %}" class="active"> Home</a></li>
+            <li><a href="{% url 'homeapp:aboutpage' %}" class=""> about us</a></li>
+            <li><a href="{% url 'projectapp:projectpage' %}" class=""> Projects</a></li>
+            <li><a href="{% url 'homeapp:eventpage' %}" class=""> events</a></li>
+            <li><a href="{% url 'homeapp:blogpage' %}" class=""> Blog</a></li>
+            <li><a href="{% url 'homeapp:landownerpage' %}" class=""> landowners</a></li>
+            <li><a href="{% url 'homeapp:contactpage' %}" class=""> Contact us</a></li>
+            <li class="close-menu"><a href="#">close <img src="{% static 'images/cancel.svg' %}" alt=""></a></li>
+                <!-- <li class="close-menu"><a href="#">close <i class="fa fa-times" aria-hidden="true"></i></a></li> -->
+            </ul>
+        </div>
+
+    <!------------------- fixed sections end ------------------->
+
+
+    <!--------------- menu section ------------------>
+    <section class="menu-area">
+        <div class="logo-here">
+            <a href="{% url 'homeapp:homepage' %}"><img src="{% static 'images/logo.svg' %}" alt=""></a>
+        </div>
+        <div class="menu-hamburger">
+            <p><i class="fa fa-bars" aria-hidden="true"></i> Menu</p>   
+        </div>
+    </section>
+
+
+{% endblock %}
