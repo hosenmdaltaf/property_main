@@ -6,6 +6,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.html import mark_safe
 from django.conf import settings
 
+from homeapp.compress import compress
+
 
 
 class Category(models.Model):
@@ -50,7 +52,16 @@ class Project(models.Model):
 
     # loaction_map = models.URLField(help_text='loaction map url of your project',null=True,blank=True)
 
-    loaction_maptxt = models.CharField(max_length=255,help_text='loaction map url of your project',null=True,blank=True)
+    loaction_maptxt = models.CharField(max_length=255,
+    help_text='loaction map url of your project',null=True,blank=True)
+
+    def save(self, *args, **kwargs):
+        # call the compress function
+        new_image = compress(self.thumnail_img)
+        # set self.image to new_image
+        self.thumnail_img = new_image
+        # save
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return str(self.name)
@@ -63,6 +74,14 @@ class Projectimages(models.Model):
     case = models.ForeignKey(Project,on_delete=models.CASCADE,null=True,blank=True)
 
     images = models.ImageField(upload_to='project_images',null=True,blank=True)
+
+    def save(self, *args, **kwargs):
+        # call the compress function
+        new_image = compress(self.images)
+        # set self.image to new_image
+        self.images = new_image
+        # save
+        super().save(*args, **kwargs)
 
 
 class Enquiry(models.Model):
