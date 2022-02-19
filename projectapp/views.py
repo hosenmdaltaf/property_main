@@ -10,14 +10,14 @@ def project(request):
     ongoing =Project.objects.filter(category='ON')
     complated =Project.objects.filter(category='CO')
    
-    print('--------------------------')
-    all=[]
-    a=[x for x in projects]
-    for to in a:
-        done = to.short_loaction
-        all.append(done) 
-    print(all)
-    print('---------------------------')
+    # print('--------------------------')
+    # all=[]
+    # a=[x for x in projects]
+    # for to in a:
+    #     done = to.short_loaction 
+    #     all.append(done) 
+    # print(all)
+    # print('---------------------------')
     return render(request,'projectapp/project.html',{'commercial':commercial,'ongoing':ongoing,'complated':complated,
     'projects':projects,'all':all})
 
